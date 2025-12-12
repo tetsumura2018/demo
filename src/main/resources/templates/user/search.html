@@ -4,9 +4,14 @@
 <body>
     <div class="container">
         <h1>ユーザー情報一覧</h1>
-        <div class="float-end">
-            <a th:href="@{/user/add}" class="btn btn-primary">新規登録はこちら</a>
-        </div>
+		<div class="d-flex flex-column align-items-end mb-3">
+		    <div>
+		        <span sec:authentication="name"></span> 様
+		    </div>
+		    <div>
+		        <a th:href="@{/user/add}" class="btn btn-primary mt-1">新規登録はこちら</a>
+		    </div>
+		</div>
         <form th:action="@{/user/search}" th:object="${userSearchRequest}" th:method="post">
             <div class="form-group">
                 <label for="id">ID</label>
